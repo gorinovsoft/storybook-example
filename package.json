@@ -1,0 +1,67 @@
+{
+  "name": "storybook",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "build-storybook:en": "cross-env VITE_LOCALE=en storybook build --output-dir storybook-en",
+    "build-storybook:ru": "cross-env VITE_LOCALE=ru storybook build --output-dir storybook-ru",
+    "loki:update": "loki update",
+    "loki:test": "loki test --reactUri=file:./storybook-static",
+    "loki:test-en": "cross-env LOCALE=en loki test --reactUri=file:./storybook-en",
+    "loki:test-ru": "cross-env LOCALE=ru loki test --reactUri=file:./storybook-ru",
+    "loki:approve": "loki approve",
+    "loki:approve-en": "cross-env LOCALE=en loki approve",
+    "loki:approve-ru": "cross-env LOCALE=ru loki approve",
+    "loki-test-report": "reg-cli ./.loki/current ./.loki/reference ./.loki/difference --extendedErrors --enableAntialias --report ./.loki/report.html --json ./.loki/report.json"
+  },
+  "dependencies": {
+    "i18next": "^23.15.2",
+    "i18next-browser-languagedetector": "^8.0.0",
+    "i18next-http-backend": "^2.6.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^15.0.2"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.9.0",
+    "@eslint/js": "^9.9.0",
+    "@storybook/addon-essentials": "^8.3.2",
+    "@storybook/addon-interactions": "^8.3.2",
+    "@storybook/addon-links": "^8.3.2",
+    "@storybook/addon-onboarding": "^8.3.2",
+    "@storybook/blocks": "^8.3.2",
+    "@storybook/react": "^8.3.2",
+    "@storybook/react-vite": "^8.3.2",
+    "@storybook/test": "^8.3.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "cross-env": "^7.0.3",
+    "del": "^7.1.0",
+    "eslint": "^9.9.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "eslint-plugin-storybook": "^0.8.0",
+    "globals": "^15.9.0",
+    "loki": "^0.35.1",
+    "prop-types": "^15.8.1",
+    "reg-cli": "^0.18.7",
+    "reg-suit-interface": "^0.14.2",
+    "rimraf": "^6.0.1",
+    "storybook": "^8.3.2",
+    "vite": "^5.4.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
+  }
+}
