@@ -2,9 +2,10 @@ import React from 'react';
 
 import {Header} from '../Header/Header.jsx';
 import './page.css';
+import PropTypes from "prop-types";
 
-export const Page = () => {
-    const [user, setUser] = React.useState();
+export const Page = ({initialUser}) => {
+    const [user, setUser] = React.useState(initialUser);
 
     return (
         <article>
@@ -66,4 +67,14 @@ export const Page = () => {
             </section>
         </article>
     );
+};
+
+Page.propTypes = {
+    initialUser: PropTypes.shape({
+        name: PropTypes.string,
+    }),
+};
+
+Page.defaultProps = {
+    initialUser: undefined,
 };

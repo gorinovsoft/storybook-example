@@ -3,16 +3,6 @@ import '../src/index.css'
 import {I18nextProvider} from 'react-i18next';
 import i18n from '../src/i18n';
 
-export const parameters = {
-    actions: {argTypesRegex: "^on[A-Z].*"},
-    controls: {
-        matchers: {
-            color: /(background|color)$/i,
-            date: /Date$/i,
-        },
-    },
-};
-
 const defaultLocale = import.meta.env.VITE_LOCALE || 'en';
 
 export const globalTypes = {
